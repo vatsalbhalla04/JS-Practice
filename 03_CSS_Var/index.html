@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables</title>
+</head>
+<body>
+
+    <h2>Update CSS Variables With <span class="hl">JS</span></h2>
+    <!-- Use <span> when you want to apply CSS or JS to a small piece of content without breaking the 
+        flow of your document -->
+
+    <div class="controls">
+
+        <label for="spacing">Spacing:</label>
+        <input type="range" name="spacing" min="10" max="200" value="10" data-sizings="px">
+
+        <label for="blur">Blur:</label>
+        <input type="range" name="blur" min="0" max="25" value="10" data-sizings="px">
+
+        <label for="base">Base Color</label>
+        <input type="color" name="base" value="#ffc600">
+
+    </div>
+
+    <img src="img.jpg" alt="Scenery">
+
+    <script src="3.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
+</body>
+</html>
