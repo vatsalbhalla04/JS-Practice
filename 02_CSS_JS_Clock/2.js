@@ -10,7 +10,7 @@ function setDate(){
     // seconds hand
     const seconds = now.getSeconds();
     const secondsDegree = ((seconds / 60)* 360) + 90; 
-    secondHand.style.transform = `rotate(${secondsDegree}deg)`;
+    secondHand.style.transform = `rotate(${secondsDegree}deg)`; //pointing towards the css prop :"transform: rotate(90deg)";
 
     //minutes-hand:
     const mins = now.getMinutes();

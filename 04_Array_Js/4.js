@@ -23,10 +23,10 @@ const people = [
 
 //Filter method : 
     //1) Filter the list of investors for those who were born in 1500's
-    const filter = inventors.filter(
+    const filtering = inventors.filter(
         inventor => inventor.year >= 1500 && inventor.year <=1600
     );
-    console.table(filter);
+    console.table(filtering);
 
 // Map(): It takes an array, performs an operation on each element, and returns a new array of the same length.
     // 2) Give the an array of the inventors first and the last name:
@@ -118,13 +118,3 @@ const people = [
       }, {});
   
       console.table(transportation);
-
-
-
-    
-
-
-    
-
-
-    
