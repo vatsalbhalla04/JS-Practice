@@ -1,5 +1,5 @@
 //https://chatgpt.com/share/6809263f-97d4-800f-87a9-3e631d0c999e
-//https://chatgpt.com/share/68092617-e8b4-800f-8e97-a22a12775c77
+// https://chatgpt.com/share/680a384c-93a4-800f-b1aa-64ca8cd86e15
 const characters = [
     {
         name: 'Luke Skywalker',
@@ -30,7 +30,7 @@ const characters = [
         gender: 'male',
     },
 ];
-
+//👆 This is an array of objects.Each item inside the array is a plain JavaScript object — key-value pairs like name, mass, gender, etc.
 
 //Use map() when you want to change the content.
 // MAP : 
@@ -136,15 +136,66 @@ const characters = [
     });
     console.table(malesFirst);
 
+// REDUCE : 
+    //1) Get the total mass of all the characters :
+    const total_mass = characters.reduce((acc,curr)=>{
+        console.table(curr);
+        // char (or curr — whatever you name it)
+        //‣ is NOT an array
+        // ‣ it’s just ONE object from the characters array
+        // ‣ on each loop, it gives you: { name: 'Luke Skywalker', height: '172', mass: '77', … }
 
+        //char is just one single object from the characters array in each loop. It’s like saying:
+        //First loop → char = characters[0]
+        // Second loop → char = characters[1]
+        // Third loop → char = characters[2]
+        // … and so on.
 
+        return acc + parseInt(curr.mass);
+        // acc starts as a number = 0
+        // char = object → char.mass = string
+    },0) // If the initial value is not kept then it will give answer in  long concatenated: '[object Object]7784136'
+    console.log("Total Mass:",total_mass);
 
+    // 2) Get The total height of all the characters: 
+    const total_height = characters.reduce((acc,curr)=>
+        acc + parseInt(curr.height)
+    ,0);
+    console.log("Total Height: ",total_height);
 
+    //3) Get the total number of character in all the character name:
+    //want to manually extract each character (like using charAt()):
+    const total_characters = characters.reduce((acc, curr) => {
+        // Loop over each character in the name using charAt()
+        for (let i = 0; i < curr.name.length; i++) {
+            curr.name.charAt(i);  // Extracts each character (not necessary for length, just demo)
+            acc++;  // Increase total count for each character
+        }
+        return acc;
+    }, 0);
+    console.log("Total num Of chars in all the character name:" , total_characters);
+
+    //OR: Summing up the lengths of all character names in the array.
+    const total_chars = characters.reduce((acc,curr)=>{
+        return acc + curr.name.length; 
+    },0)
+    console.log(total_chars);
     
-    
+    //4)Get the total number of characters by eye color (hint. a map of eye color to count):
+    const total_eye_color = characters.reduce((acc,curr)=>{
+        if(acc[curr.eye_color]){
+            acc[curr.eye_color] += 1;
+        }
+        else {
+            acc[curr.eye_color] = 1;
+        }
+        return acc;
+    },{}); //{} (empty object) is used because we're tracking counts based on keys (i.e., eye color) — this requires an object to store the counts.
 
+    // And why not used 0 : 0 as the initial value would work if you were just summing values or numbers, but here we need to build an object with keys for each eye color
 
-    
+    console.table(total_eye_color);
+
 
     
     
