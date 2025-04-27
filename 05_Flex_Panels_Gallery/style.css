@@ -1,0 +1,122 @@
+body,html{
+    width: 100%;
+    height: 100vh;
+}
+
+html{
+    box-sizing: border-box;
+    background: #ffc600;
+    font-family: 'helvetica neue';
+    font-size: 20px;
+    font-weight: 200;
+}
+body{
+    margin: 0;
+}
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+/* Effect:
+✅ Padding and borders don't mess up widths
+✅ Layouts behave more predictably
+✅ Easy mental math for sizing
+ */
+
+/* 
+    * → means every element.This is the universal selector, meaning it targets every single element inside .panel, whether it's a <p>, <div>, <span>, etc.
+
+    *::before, *::after → means pseudo-elements (like fake elements added before or after real ones).
+
+    box-sizing: inherit → means "take the box-sizing value from the parent".
+
+*/
+
+.panels{
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+.panel{
+    background: #6B0F9C;
+    box-shadow: inset 0 0 0 5px;
+    color:  white;
+    text-align: center;
+    align-items: center;
+    transition: 
+         font-size 0.7s cubic-bezier(0.61,-0.19,0.7,-0.11),
+        flez 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+        background 0.2s;  
+    font-size: 30px;
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    justify-content: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.panel_1{
+    background-image: url(https://images.unsplash.com/photo-1743527173859-2cf44e80cef8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+.panel_2{
+    background-image: url(https://images.unsplash.com/photo-1744035435378-11751d4f1c07?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+.panel_3{
+    background-image: url(https://images.unsplash.com/photo-1744044041394-acefd590a9e9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+.panel_4{
+    background-image: url(https://images.unsplash.com/photo-1744648617182-519c4bf39e30?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+.panel_5{
+    background-image: url(https://plus.unsplash.com/premium_photo-1666232903265-ba0419aa3ef7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+
+/* Flex Children */
+.panel > *{ /* targets all elements that are direct children of any .panel*/
+    margin: 0;
+    width: 100%;
+    transition: transform 0.5s;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* This ":first-child" and ":last-child" pseudo-classes combined with transformations to animate the movement of the first and last elements inside a .panel */
+.panel > *:first-child { 
+    transform: translateY(-100%); 
+}
+.panel.open-active > *:first-child { 
+    transform: translateY(0); 
+}
+.panel > *:last-child { 
+    transform: translateY(100%); 
+}
+.panel.open-active > *:last-child { 
+    transform: translateY(0); 
+}
+/* 
+What’s Happening?
+
+    Initially:
+   --> The first child of .panel is moved off the top (above the panel, by 100% of its height).
+
+    --> The last child is moved off the bottom (below the panel, by 100% of its height).
+
+    When the .panel has the class .open-active:
+    --> The first child comes back to its normal position (translateY(0)).
+
+    --> The last child also comes back to its normal position (translateY(0)).
+*/
+
+.panel.open{
+    font-size: 45px;
+    flex: 5;
+}
+
+@media only screen and (max-width: 600px) {
+    .panel p {
+      font-size: 1em;
+    }
+}
