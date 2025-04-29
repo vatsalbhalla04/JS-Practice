@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Player</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Video Player</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="player">
-        <video class="player_video viewer" src = "video.mp4"></video>
+  <div class="player">
+    <video class="player__video viewer" src="video.mp4" ></video>
 
-        <div class="player_controls">
-            <div class="progress">
-                <div class="progress_filled"></div>
-            </div>
-            <button class="player_button toggle" title="Toogle Play">►</button>
-            <input type="range" name="volume" class="player_slider" min="0" max="1" step="0.05" value="1">
-            <input type="range" name="playback_rate" class="player_slider" min="0.5" max="2" step="0.1" value="1">
-            <button data-skip="-10" class="player_button">« 10s</button>
-            <button data-skip="10" class="player_button">10s »</button>
-        </div>
+    <div class="player__controls">
+      <div class="progress">
+        <div class="progress__filled"></div>
+      </div>
+      <button class="player__button toggle" title="Toggle Play">►</button>
+      <input type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1">
+      <input type="range" name="playbackRate" class="player__slider" min="0.5" max="2" step="0.1" value="1">
+      <button data-skip="-10" class="player__button">« 10s</button>
+      <button data-skip="10" class="player__button">10s »</button>
     </div>
-    <script type="module" src="8.js"></script>
-    <link rel="stylesheet" href="style.css">
+  </div>
+  <script src="8.js">ok</script>
 </body>
 </html>
