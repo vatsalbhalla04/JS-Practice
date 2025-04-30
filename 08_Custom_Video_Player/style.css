@@ -57,12 +57,10 @@ html {
   .player__button:focus {
     border-color: #ffc600;
   }
-  
   .player__slider {
     width: 10px;
     height: 30px;
   }
-  
   .player__controls {
     display: flex;
     position: absolute;
