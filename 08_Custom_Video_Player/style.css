@@ -107,7 +107,7 @@ html {
   /* unholy css to style input type="range" */
   
   input[type=range] {
-    -webkit-appearance: none;
+    -webkit-animation:  none;
     background: transparent;
     width: 100%;
     margin: 0 5px;
