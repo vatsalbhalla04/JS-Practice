@@ -35,6 +35,11 @@ const people = [
     })
     console.table(full_name);
 
+// ✅  Why use map()?
+    // Original array unchanged rahta hai
+    // Perfect for React state updates
+    // Useful for rendering UI from arrays
+
 // Sort() : array.sort() is a built-in JavaScript method that rearranges the elements of an array based on how you tell it to compare two elements. It doesn't just shuffle stuff—it compares two elements at a time, like a judge in a tournament 🥋, and reorders them accordingly.
     // 3) Sort the investors by birthday, oldest to youngest: 
     const birthday = inventors.sort((a,b)=>{
