@@ -29,6 +29,7 @@ const people = [
     console.table(filtering);
 
 // Map(): It takes an array, performs an operation on each element, and returns a new array of the same length.
+    // .map() = always returns a new array  Even if you don’t "modify" anything
     // 2) Give the an array of the inventors first and the last name:
     const full_name = inventors.map(inventor=>{
          return `${inventor.first}  ${inventor.last}`
